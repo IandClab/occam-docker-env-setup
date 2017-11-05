@@ -1,0 +1,34 @@
+{
+  "type": "docker-environment-ubuntu",
+  "id": "534ac6e8-c257-11e7-b871-080027dcba00",
+  "name": "MATLAB",
+
+  "architecture": "x86-64",
+  "environment": "docker",
+
+  "build": {
+    "command": "sh build.sh"
+  },
+
+  "install": [
+    {
+      "type": "docker-container",
+      "source": "ubuntu:16.04",
+      "revision": "c9b3c8fe-fc90-4e2f-beaf-ea4e2bd7364e",
+      "name": "Ubuntu 16.04 Docker Image",
+      "id": "7d8149a9-87d0-30bf-b0a3-500ebfd0c809"
+    }
+  ],
+
+  "provides": {
+    "architecture": "x86-64",
+    "environment": "ubuntu:WCPS",
+    "MACAddress":"8E:ED:A7:39:67:BF"
+  },
+
+  "basepath": {
+    "local": "/local",
+    "separator": "/",
+    "mount": "/occam"
+  }
+}
